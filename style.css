@@ -1,0 +1,27 @@
+/*
+Theme Name: Modern
+Theme URI: https://facebook.com/
+Author: modern
+Author URI: https://facebook.com/
+Description: This is a simple mult-purpose theme.
+Version: 1.0
+License: GPL
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: modern
+Tags: one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready
+*/
+.comment-author.vcard img {
+    max-width: 50px;
+}
+.single-slide{
+    background-attachment: initial !important;
+}
+.single-blog img {
+    height: 220px;
+    object-fit: contain;
+}
+.my_pagination a {
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    margin: 5px;
+}
