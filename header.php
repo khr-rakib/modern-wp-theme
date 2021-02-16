@@ -1,3 +1,5 @@
+<?php $options = get_option( 'modern_framework' ); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,17 +19,20 @@
          <div class="row">
             <div class="col-md-6 col-sm-12">
                <div class="header-left">
-                  <a href=""><i class="fa fa-envelope"></i> info@Modern.com</a>
-                  <a href=""><i class="fa fa-phone"></i> 23457689</a>
+                  <?php if( $options['header_email'] ) { ?>
+                     <a href="mailto:<?php echo $options['header_email']; ?>"><i class="fa fa-envelope"></i> <?php echo $options['header_email']; ?> </a>
+                  <?php } ?>
+                  <?php if( $options['header_phone'] ) { ?>
+                     <a href="tel:<?php echo $options['header_phone']; ?>"><i class="fa fa-phone"></i> <?php echo $options['header_phone']; ?></a>
+                  <?php } ?>
+
                </div>
             </div>
             <div class="col-md-6 col-sm-12 text-right">
                <div class="header-social">
-                  <a href=""><i class="fa fa-facebook"></i></a>
-                  <a href=""><i class="fa fa-twitter"></i></a>
-                  <a href=""><i class="fa fa-youtube"></i></a>
-                  <a href=""><i class="fa fa-linkedin"></i></a>
-                  <a href=""><i class="fa fa-google-plus"></i></a>
+                  <?php foreach( $options['header_icons'] as $item ) { ?>
+                     <a href="<?php echo $item['social_link']; ?>"><i class="<?php echo $item['social_icon']; ?>"></i></a>
+                  <?php } ?>                  
                </div>
             </div>
          </div>
@@ -39,7 +44,11 @@
          <div class="row">
             <div class="col-xl-12">
                <nav class="navbar navbar-expand-md navbar-light">
-                  <a class="navbar-brand" href="<?php echo get_home_url(); ?>">Modern</a>
+                  <a class="navbar-brand" href="<?php echo get_home_url(); ?>">
+                     <?php if( $options['header_logo']['url'] ){ ?>
+                        <img src="<?php echo $options['header_logo']['url'];  ?>" alt="" width="80">
+                     <?php } else { echo 'Modern'; } ?>
+                  </a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                      <span class="navbar-toggler-icon"></span>

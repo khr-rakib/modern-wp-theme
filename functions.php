@@ -1,9 +1,14 @@
 <?php
 
+require_once get_theme_file_path() .'/inc/modern-codestar.php';
+
+
+
 function load_css_js(){    
     // load css
     wp_enqueue_style( 'bootstrap-css', get_template_directory_uri().'/assets/css/bootstrap.min.css', array(), "4.1.0", "all");
     wp_enqueue_style( 'fontawesome-css', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), "1.0", "all" );
+    wp_enqueue_style( 'fontawesome-5-css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css' );
     wp_enqueue_style( 'magnificpopup-css', get_template_directory_uri() . '/assets/css/magnific-popup.css', array(), "1.0", "all" );
     wp_enqueue_style( 'owlcarousel-css', get_template_directory_uri() . '/assets/css/owl.carousel.css', array(), "1.0", "all" );
     wp_enqueue_style( 'style-css', get_template_directory_uri() . '/assets/css/style.css', array(), "1.0", "all" );
