@@ -146,9 +146,45 @@ if( class_exists( 'CSF' ) ) {
   ]);
 
   // faq & team section
-  // CSF::createSection($prefix, [
-  //   ''
-  // ]);
+  CSF::createSection($prefix, [
+    'id'  => 'faq_&_skills',
+    'title' => 'FAQ & Skills',    
+  ]);
+
+  CSF::createSection($prefix, [
+    'id'  => 'faq',
+    'title' => 'FAQ',
+    'parent'    => 'faq_&_skills',
+    'fields' => [
+      [
+        'id' => 'faq_group',
+        'title' => "Add Faq's",
+        'type' => 'group',
+        'fields' => [
+          [
+            'id' => 'faq_title',
+            'title' => 'Faq Title',
+            'type' => 'text'
+          ],
+          [
+            'id' => 'faq_desc',
+            'title' => 'Faq Description',
+            'type' => 'textarea'
+          ]
+        ]
+      ]
+    ]
+  ]);
+
+
+  CSF::createSection($prefix, [
+    'id'  => 'skills',
+    'title' => 'Skills',
+    'parent'    => 'faq_&_skills',
+    'fields' => [
+      
+    ]
+  ]);
 
 
 
