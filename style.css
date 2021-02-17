@@ -25,3 +25,8 @@ Tags: one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, 
     padding: 5px 10px;
     margin: 5px;
 }
+.single_about i {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 50%;
+}

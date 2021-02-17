@@ -69,16 +69,95 @@ if( class_exists( 'CSF' ) ) {
   // Create a section
   CSF::createSection( $prefix, array(
     'title'  => 'About Us',
-    'fields' => array(
-
-      // A textarea field
-      array(
-        'id'    => 'opt-textarea',
-        'type'  => 'textarea',
-        'title' => 'Simple Textarea',
-      ),
-
-    )
+    'id'  => 'about_us'
   ) );
+
+  CSF::createSection($prefix, [
+    'id'  => 'about_top',
+    'title' => "About Top",
+    'parent' => 'about_us',
+    'fields' => [
+      [
+        'id' => 'about_sub_heading',
+        'type' => 'text',
+        'title' => 'About Sub Heading'
+      ],
+      [
+        'id' => 'about_heading',
+        'type' => 'text',
+        'title' => 'About Heading'
+      ],
+      [
+        'id' => 'about_short_description',
+        'type' => 'textarea',
+        'title' => 'About Short Description'
+      ],
+    ]
+  ]);
+
+  CSF::createSection($prefix, [
+    'id'  => 'about_bottom',
+    'title' => "About Bottom",
+    'parent' => 'about_us',
+    'fields' => [
+      [
+        'id'  => 'about_title',
+        'title' => 'About Title',
+        'type'  => 'text'
+      ],
+      [
+        'id'  => 'about_description',
+        'title' => 'About Description',
+        'type' => 'textarea'
+      ],
+      [
+        'id'  => 'about_button_text',
+        'title' => 'About Button Text',
+        'type'  => 'text'
+      ],
+      [
+        'id' => 'about_button_link',
+        'title' => 'About Button Link',
+        'type' => 'text'
+      ],
+      [
+        'id' => 'our_plans',
+        'title' => 'Our Plans',
+        'type'  => 'group',
+        'fields' => [
+          [
+            'id' => 'our_plan_icon',
+            'type'  => 'icon',
+            'title' => 'Our Plan Icon'
+          ],
+          [
+            'id' => 'our_plan_name',
+            'type' => 'text',
+            'title' => 'Our Plan Name'
+          ],
+          [
+            'id' => 'our_plan_shortdesc',
+            'type' => 'textarea',
+            'title' => 'Our Plan Short Description'
+          ]
+        ]
+      ]
+    ]
+  ]);
+
+  // faq & team section
+  // CSF::createSection($prefix, [
+  //   ''
+  // ]);
+
+
+
+
+
+
+
+
+
+
 
 }

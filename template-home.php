@@ -3,6 +3,7 @@
       Template Name: Home Page
       */
       get_header();
+      $options = get_option( 'modern_framework' );
    ?>
    <!-- Slider Area Start -->
    <section class="slider-area" id="home">
@@ -53,42 +54,31 @@
       <div class="container">
          <div class="row section-title">
             <div class="col-md-6 text-right">
-               <h3><span>who we are?</span> about us</h3>
+               <h3><span><?php echo $options['about_sub_heading']; ?></span> <?php echo $options['about_heading']; ?></h3>
             </div>
             <div class="col-md-6">
-               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry.d </p>
+               <p> <?php echo $options['about_short_description']; ?> </p>
             </div>
          </div>
          <div class="row">
             <div class="col-md-7">
                <div class="about">
                   <div class="page-title">
-                     <h4>welcome to Modern</h4>
+                     <h4><?php echo $options['about_title']; ?></h4>
                   </div>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry </p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda distinctio maxime laborum
-                     delectus aliquam ipsum itaque voluptatem non reiciendis aliquid totam facere, tempora iure iusto
-                     adipisci doloremque in, amet, alias nostrum. Explicabo reprehenderit.</p>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry </p>
-                  <a href="#" class="box-btn">read more <i class="fa fa-angle-double-right"></i></a>
+                  <p><?php echo $options['about_description']; ?></p>
+                  <a href="<?php echo $options['about_button_link']; ?>" class="box-btn"><?php echo $options['about_button_text']; ?> <i class="fa fa-angle-double-right"></i></a>
                </div>
             </div>
             <div class="col-md-5">
-               <div class="single_about">
-                  <i class="fa fa-laptop"></i>
-                  <h4>our mission</h4>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry </p>
-               </div>
-               <div class="single_about">
-                  <i class="fa fa-user"></i>
-                  <h4>our vission</h4>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry </p>
-               </div>
-               <div class="single_about">
-                  <i class="fa fa-pencil"></i>
-                  <h4>our history</h4>
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry typesetting industry </p>
-               </div>
+               <?php foreach($options['our_plans'] as $item ){ ?>
+                  <div class="single_about">
+                     <i class="<?php echo $item['our_plan_icon']; ?>"></i>
+                     <h4><?php echo $item['our_plan_name']; ?></h4>
+                     <p><?php echo $item['our_plan_shortdesc']; ?></p>
+                  </div>
+               <?php } ?>
+               
             </div>
          </div>
       </div>
