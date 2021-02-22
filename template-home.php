@@ -42,10 +42,6 @@
             </div>
 
          <?php }  wp_reset_postdata(); ?>
-
-        
-         
-         
       </div>
    </section>
    <!-- Slider Area Start -->
@@ -71,14 +67,13 @@
                </div>
             </div>
             <div class="col-md-5">
-               <?php foreach($options['our_plans'] as $item ){ ?>
+               <?php if($options['our_plans']){ foreach($options['our_plans'] as $item ){ ?>
                   <div class="single_about">
                      <i class="<?php echo $item['our_plan_icon']; ?>"></i>
                      <h4><?php echo $item['our_plan_name']; ?></h4>
                      <p><?php echo $item['our_plan_shortdesc']; ?></p>
                   </div>
-               <?php } ?>
-               
+               <?php }} else { echo 'Please add your plans'; } ?>               
             </div>
          </div>
       </div>
@@ -108,8 +103,7 @@
                         <div id="<?php echo sanitize_title($item['faq_title']); ?>" class="collapse show" aria-labelledby="headingOne"
                            data-parent="#accordionExample">
                            <div class="card-body">
-                                                            <?php echo $item['faq_desc']; ?>
-
+                              <?php echo $item['faq_desc']; ?>
                            </div>
                         </div>
                      </div>

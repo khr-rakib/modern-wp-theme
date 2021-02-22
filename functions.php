@@ -1,6 +1,9 @@
 <?php
 
 require_once get_theme_file_path() .'/inc/modern-codestar.php';
+require_once get_theme_file_path() .'/inc/class-tgm-plugin-activation.php';
+require_once get_theme_file_path() .'/inc/modern-activate.php';
+require_once get_theme_file_path() .'/inc/modern-demo.php';
 
 
 

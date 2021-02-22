@@ -21,18 +21,20 @@
                <div class="header-left">
                   <?php if( $options['header_email'] ) { ?>
                      <a href="mailto:<?php echo $options['header_email']; ?>"><i class="fa fa-envelope"></i> <?php echo $options['header_email']; ?> </a>
-                  <?php } ?>
+                  <?php } else { echo 'Email address...'; } ?>
                   <?php if( $options['header_phone'] ) { ?>
                      <a href="tel:<?php echo $options['header_phone']; ?>"><i class="fa fa-phone"></i> <?php echo $options['header_phone']; ?></a>
-                  <?php } ?>
+                  <?php } else { echo 'Mobile number...'; } ?>
 
                </div>
             </div>
             <div class="col-md-6 col-sm-12 text-right">
                <div class="header-social">
-                  <?php foreach( $options['header_icons'] as $item ) { ?>
+                  <?php 
+                     if($options['header_icons']){
+                     foreach( $options['header_icons'] as $item ) { ?>
                      <a href="<?php echo $item['social_link']; ?>"><i class="<?php echo $item['social_icon']; ?>"></i></a>
-                  <?php } ?>                  
+                  <?php }} else { echo "Please insert your social links"; } ?>                  
                </div>
             </div>
          </div>
@@ -45,8 +47,8 @@
             <div class="col-xl-12">
                <nav class="navbar navbar-expand-md navbar-light">
                   <a class="navbar-brand" href="<?php echo get_home_url(); ?>">
-                     <?php if( $options['header_logo']['url'] ){ ?>
-                        <img src="<?php echo $options['header_logo']['url'];  ?>" alt="" width="80">
+                     <?php if( $options['header_logo'] ){ ?>
+                        <img src="<?php echo $options['header_logo']['url'];  ?>" alt="Modern" width="80">
                      <?php } else { echo 'Modern'; } ?>
                   </a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
